@@ -4,9 +4,7 @@ $f3=require('lib/base.php');
 $f3->set('AUTOLOAD','pusherserver/lib/');
 $f3->config('config.ini');
 
- 
 
-	
 
 $f3->route('GET /',
 	function($f3) {
@@ -18,6 +16,12 @@ $f3->route('GET /',
 $f3->route('GET /game',
 	function($f3) {
 		echo View::instance()->render('game.htm');
+	}
+);
+
+$f3->route('GET /controller',
+	function($f3) {
+		echo View::instance()->render('controller.htm');
 	}
 );
 
