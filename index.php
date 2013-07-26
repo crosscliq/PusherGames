@@ -10,7 +10,7 @@ $f3->config('config.ini');
 
 $f3->route('GET /',
 	function($f3) {
-		echo 'workin';
+		echo View::instance()->render('form.htm');
 	}
 );
 
