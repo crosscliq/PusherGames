@@ -1,0 +1,53 @@
+#wrapper {
+
+	border: 1px solid black;
+	float: left;
+	width: 100%;
+	min-width: 400px; 
+}
+#directionsWrapper {
+	float:left;
+	display: block;
+	height: 200px;
+	width: 200px;
+	border: 1px solid;
+	position: relative;
+}
+#directionsWrapper #up {
+	position: absolute;
+	top: 5px;
+	left: 90px;
+}
+#directionsWrapper #down {
+	position: absolute;
+	top: 155px;
+	left: 80px;
+}
+#directionsWrapper #right {
+	position: absolute;
+	top: 80px;
+	left: 135px;
+}
+#directionsWrapper #left {
+	position: absolute;
+	top: 80px;
+	left: 5px;
+}
+
+
+#abButtons {
+	float:right;
+	height: 200px;
+	width: 50px;
+}
+
+#abButtons button {
+	float:right;
+	height: 50px;
+	width: 50px;
+	margin-top: 25px;
+}
+#ssButtons {
+	width:150px;
+	margin: 0 auto;
+}

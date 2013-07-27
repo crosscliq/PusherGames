@@ -40,6 +40,27 @@
     left: $("#box").position().left + 10 + "px"});
 
   	});
+     game.bind('start', function(data) {
+      $("#box").css({
+    'left': '0', 'top': '0' });
+
+    });
+
+      game.bind('a', function(data) {
+      $("#box").css({
+    'background-color': '#ffe'});
+
+    });
+
+       game.bind('b', function(data) {
+      $("#box").css({
+    'background-color': '#345345'});
+
+    });
+
+      
+
+    
 
 
 
