@@ -1,0 +1,3 @@
+[submodule "pusherserver"]
+	path = pusherserver
+	url = git@github.com:pusher/pusher-php-server.git
