@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Lobby</title>
+  <link rel="stylesheet" href="ui/css/lobby.css" type="text/css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
+  
+</head>
+<body>
+<?php echo var_dump($_SESSION['name']); ?>
+<?php if(empty($_SESSION['name'])); ?>
+<form action="/lobby" method="POST">
+  <input name="name" /> <button action="submit">Sign up</button>
+  
+</form>
+<php endif; ?>
+<div>
+
+</body>
+
+</html>

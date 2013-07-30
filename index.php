@@ -29,13 +29,33 @@ $f3->route('GET /game',
 	}
 );
 
+
+$f3->route('GET /lobby',
+	function($f3) {
+
+
+		echo View::instance()->render('lobby.htm');
+	}
+);
+
+$f3->route('POST /lobby',
+	function($f3) {
+
+		F3::set("SESSION.name", $f3->get('POST.name') );
+		//echo F3::get("SESSION.test", 'A session exists!!!!');	
+
+
+		echo View::instance()->render('lobby.htm');
+	}
+);
+
+
+
 $f3->route('GET /controller',
 	function($f3) {
 
 		//F3::set("SESSION.test", 'A session exists!!!!');
 		//echo F3::get("SESSION.test", 'A session exists!!!!');	
-
-
 		echo View::instance()->render('controller.htm');
 	}
 );
