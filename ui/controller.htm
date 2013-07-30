@@ -5,8 +5,10 @@
 
   <link rel="stylesheet" href="ui/css/controller.css" type="text/css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
   <style>
+  body { overflow:hidden; }
   #sphere {
 	position: absolute;	
 	width: 50px;
@@ -22,12 +24,8 @@
 <div id="wrapper">
 
 <div id="controller">
-<div id="directionsWrapper">
-<button id='up' class="controllerButton">UP</button>
-<button id='down' class="controllerButton">DOWN</button>
-<button id='right' class="controllerButton">RIGHT</button>
-<button id='left' class="controllerButton">LEFT</button>
-</div>
+	  <div id="joystick"><div id="area"><div id="ball"></div></div></div>
+
 <div id="abButtons">
 <button id='a' class="controllerButton">A</button>
 <button id='b' class="controllerButton">B</button>

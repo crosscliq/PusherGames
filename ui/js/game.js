@@ -1,4 +1,5 @@
-    Pusher.log = function(message) {
+var cTimer;  
+  Pusher.log = function(message) {
       if (window.console && window.console.log) {
         window.console.log(message);
       }
@@ -17,29 +18,93 @@
       $('#game').append(data.something);
     });
 
-    game.bind('up', function(data) {
-    	$("#box").css({
-    top: $("#box").position().top - 10 + "px"});
-     
+	game.bind('stop', function(data) {
+     window.clearInterval(cTimer);
+    });
+	
+    game.bind('leftup', function(data) {
+		window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
+
+			$("#box").css({	top: $("#box").position().top - 1 + "px",left: $("#box").position().left - 1 + "px"});
+		},
+		10
+		);
     });
 
-    game.bind('down', function(data) {
-    	$("#box").css({
-    top: $("#box").position().top + 10 + "px"});
-     
+    game.bind('rightup', function(data) {
+		window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
+
+			$("#box").css({	top: $("#box").position().top - 1 + "px",left: $("#box").position().left + 1 + "px"});
+		},
+		10
+		);
+    });	
+	
+	
+	game.bind('up', function(data) {
+		window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
+
+			$("#box").css({	top: $("#box").position().top - 1 + "px"});
+		},
+		10
+		);
+    });	
+	
+	
+	game.bind('down', function(data) {
+		window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
+
+			$("#box").css({	top: $("#box").position().top + 1 + "px"});
+		},
+		10
+		);
+    });	
+	
+	game.bind('right', function(data) {
+		window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
+
+			$("#box").css({	left: $("#box").position().left + 1 + "px"});
+		},
+		10
+		);
+    });	
+	
+	game.bind('left', function(data) {
+		window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
+
+			$("#box").css({	left: $("#box").position().left - 1 + "px"});
+		},
+		10
+		);
+    });	
+	
+	    game.bind('rightdown', function(data) {
+		window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
+
+			$("#box").css({	top: $("#box").position().top + 1 + "px",left: $("#box").position().left + 1 + "px"});
+		},
+		10
+		);
     });
 
-    game.bind('left', function(data) {
-    	$("#box").css({
-    left: $("#box").position().left - 10 + "px"});
-     
-    });
+    game.bind('leftdown', function(data) {
+	    window.clearInterval(cTimer);
+		cTimer=setInterval(function(){
 
-     game.bind('right', function(data) {
-    	$("#box").css({
-    left: $("#box").position().left + 10 + "px"});
-
-  	});
+			$("#box").css({	top: $("#box").position().top + 1 + "px",left: $("#box").position().left - 1 + "px"});
+		},
+		10
+		);
+    });	
+	
+	
      game.bind('start', function(data) {
       $("#box").css({
     'left': '0', 'top': '0' });

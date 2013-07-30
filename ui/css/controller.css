@@ -5,6 +5,31 @@
 	width: 100%;
 	min-width: 400px; 
 }
+
+#joystick {
+	height:200px;
+	width:200px;
+	background:url(../images/joystick-bg.png) no-repeat;
+	background-size:cover;
+}
+#joystick #area {
+	top:20px;
+	left:20px;
+	height:170px;
+	width:170px;
+	position:absolute;
+	border-radius:50%;
+
+	}
+#joystick #ball {
+	height:100px;
+	width:100px;
+	background:url(../images/joystick-ball.png) no-repeat;
+	background-size:cover;
+	position:absolute;
+	top:20px;
+	left:35px;
+	}
 #directionsWrapper {
 	float:left;
 	display: block;
