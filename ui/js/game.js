@@ -1,4 +1,5 @@
 var cTimer;  
+var oldScale=1;
   Pusher.log = function(message) {
       if (window.console && window.console.log) {
         window.console.log(message);
@@ -12,6 +13,8 @@ var cTimer;
     });
 
 
+	
+
      var game = pusher.subscribe('game');
     game.bind('event1', function(data) {
     	alert(data);
@@ -22,11 +25,16 @@ var cTimer;
      window.clearInterval(cTimer);
     });
 	
+	game.bind('grab', function(data) {
+			$("#box").effect("shake");
+    });	
+	
+	
     game.bind('leftup', function(data) {
 		window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
 
-			$("#box").css({	top: $("#box").position().top - 1 + "px",left: $("#box").position().left - 1 + "px"});
+			$("#box").css({	top: $("#box").position().top - 2 + "px",left: $("#box").position().left - 2 + "px"});
 		},
 		10
 		);
@@ -36,7 +44,7 @@ var cTimer;
 		window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
 
-			$("#box").css({	top: $("#box").position().top - 1 + "px",left: $("#box").position().left + 1 + "px"});
+			$("#box").css({	top: $("#box").position().top - 2 + "px",left: $("#box").position().left + 2 + "px"});
 		},
 		10
 		);
@@ -46,19 +54,16 @@ var cTimer;
 	game.bind('up', function(data) {
 		window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
-
-			$("#box").css({	top: $("#box").position().top - 1 + "px"});
+			$("#box").css({	top: $("#box").position().top - 2 + "px"});
 		},
 		10
 		);
     });	
-	
-	
+
 	game.bind('down', function(data) {
 		window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
-
-			$("#box").css({	top: $("#box").position().top + 1 + "px"});
+			$("#box").css({	top: $("#box").position().top + 2 + "px"});
 		},
 		10
 		);
@@ -68,7 +73,7 @@ var cTimer;
 		window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
 
-			$("#box").css({	left: $("#box").position().left + 1 + "px"});
+			$("#box").css({	left: $("#box").position().left + 2 + "px"});
 		},
 		10
 		);
@@ -78,7 +83,7 @@ var cTimer;
 		window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
 
-			$("#box").css({	left: $("#box").position().left - 1 + "px"});
+			$("#box").css({	left: $("#box").position().left - 2 + "px"});
 		},
 		10
 		);
@@ -88,7 +93,7 @@ var cTimer;
 		window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
 
-			$("#box").css({	top: $("#box").position().top + 1 + "px",left: $("#box").position().left + 1 + "px"});
+			$("#box").css({	top: $("#box").position().top + 2 + "px",left: $("#box").position().left + 2 + "px"});
 		},
 		10
 		);
@@ -98,7 +103,7 @@ var cTimer;
 	    window.clearInterval(cTimer);
 		cTimer=setInterval(function(){
 
-			$("#box").css({	top: $("#box").position().top + 1 + "px",left: $("#box").position().left - 1 + "px"});
+			$("#box").css({	top: $("#box").position().top + 2 + "px",left: $("#box").position().left - 2 + "px"});
 		},
 		10
 		);

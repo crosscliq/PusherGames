@@ -1,11 +1,8 @@
  $(document).ready(function() {
 
- $(".controllerButton").click(function() {
-  		console.log('button was pressed');
-  		console.log(this.id);
+ $("#grab").click(function() {
   		call = '/controller/input';
-  		console.log(call);
-  		$.post(call, { key: this.id, type: 'press'});
+  		$.post(call, { key: 'grab', type: 'press'});
 	});
 
   
